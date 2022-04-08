@@ -1,0 +1,50 @@
+<div class="main">
+  <div class="subDiv">
+    <div class="mainDiv">
+      <div class="navBarDiv">
+        <div class="dropDown">
+          <div class="heading">
+            <h1>Currency Converter</h1>
+          </div>
+          <div class="drop" id="drop">
+            <div>
+              <p-dropdown [style]="{'maxwidth': '100%','width': '15vw'}"
+                #dd
+                [options]="options"
+                [(ngModel)]="baseSelected"
+                placeholder="Select Base Currency"
+                optionLabel="label"
+                [showClear]="true"
+              >
+              </p-dropdown>
+            </div>
+            <div class="field col-12 md:col-3">
+              <p-inputNumber
+                [(ngModel)]="currencyAmount"
+                mode="decimal"
+                placeholder="Enter Amount"
+              >
+              </p-inputNumber>
+            </div>
+            <div>
+              <p-dropdown [style]="{'maxwidth': '100%','width': '15vw'}"
+                [options]="options"
+                [(ngModel)]="targetSelected"
+                placeholder="Select Target Currency"
+                optionLabel="label"
+                [showClear]="true"
+              >
+              </p-dropdown>
+            </div>
+          </div>
+          <div class="btn">
+            <button (click)="submitted()" pButton>Submit</button>
+          </div>
+          <div class="result">
+            <h1>{{ fixed }} {{ targetSelectedLabel }}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

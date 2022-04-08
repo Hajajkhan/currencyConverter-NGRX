@@ -1,0 +1,22 @@
+<p-menubar
+  [model]="items"
+  styleClass="test"
+  [style]="{
+    'background-color': '#abe9cd',
+    'background-image': ' linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%)'
+  }"
+>
+  <div class="navBar">
+    <div>
+      <p-dropdown
+        (onChange)="onChange()"
+        [options]="options"
+        [(ngModel)]="targetSelected"
+        placeholder= "Select currency"
+        optionLabel="label"
+        [showClear]="true"
+      >
+      </p-dropdown>
+    </div>
+  </div>
+</p-menubar>
